@@ -4,14 +4,14 @@ import type { SiteConfig } from './types'
 /**
  * @chirag127/site-shell Astro integration.
  *
- * Registers /health, /robots.txt, /humans.txt, and exposes SiteConfig
- * as a virtual module `@chirag127/site-shell:config`.
+ * Exposes SiteConfig as a virtual module `@chirag127/site-shell:config`.
+ * Sites can define their own /health route if desired.
  */
 export default function siteShell(config: SiteConfig): AstroIntegration {
   return {
     name: '@chirag127/site-shell',
     hooks: {
-      'astro:config:setup': ({ injectRoute, updateConfig }) => {
+      'astro:config:setup': ({ updateConfig }) => {
         updateConfig({
           vite: {
             plugins: [
@@ -27,8 +27,6 @@ export default function siteShell(config: SiteConfig): AstroIntegration {
             ],
           },
         })
-
-        injectRoute({ pattern: '/health', entrypoint: '@chirag127/site-shell/routes/health.ts' } as any)
       },
     },
   }
