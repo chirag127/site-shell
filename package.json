@@ -1,0 +1,25 @@
+{
+  "name": "@chirag127/site-shell",
+  "version": "0.1.0",
+  "description": "Shared Astro+shadcn shell for oriz.in fleet sites",
+  "type": "module",
+  "license": "MIT",
+  "repository": "github:chirag127/site-shell",
+  "exports": {
+    ".": "./src/index.ts",
+    "./astro": "./src/astro-integration.ts",
+    "./components/*": "./src/components/*",
+    "./content-schema": "./src/content-schema.ts",
+    "./styles/global.css": "./src/styles/global.css",
+    "./styles/typography.css": "./src/styles/typography.css"
+  },
+  "files": ["src/", "README.md", "LICENSE"],
+  "peerDependencies": {
+    "astro": "^5.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "dependencies": {
+    "zod": "^4.0.0"
+  }
+}

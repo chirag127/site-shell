@@ -1,0 +1,34 @@
+---
+/**
+ * <Wordmark /> — top-left brand element, shared across all 3 sites.
+ *
+ * Displays "oriz.in / <site>" with the shared family typography.
+ * Links back to the family root.
+ */
+import config from '@chirag127/site-shell:config'
+---
+
+<a href="https://oriz.in/" class="wordmark">
+  <span class="wordmark__root">oriz.in</span>
+  <span class="wordmark__sep">/</span>
+  <span class="wordmark__site">{config.name}</span>
+</a>
+
+<style>
+  .wordmark {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.25em;
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    letter-spacing: -0.01em;
+    color: var(--wordmark-color, currentColor);
+    text-decoration: none;
+    transition: opacity 150ms;
+  }
+  .wordmark:hover { opacity: 0.75; }
+  .wordmark__root { opacity: 0.6; }
+  .wordmark__sep { opacity: 0.3; margin: 0 0.15em; }
+  .wordmark__site { font-weight: 600; }
+</style>

@@ -1,0 +1,42 @@
+---
+/**
+ * <Footer /> — minimal shared footer.
+ */
+import config from '@chirag127/site-shell:config'
+---
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      Part of <a href="https://oriz.in/">oriz.in</a> — MIT licensed
+    </div>
+    <nav class="footer__links">
+      <a href={config.githubUrl}>source</a>
+      <a href="/feed.xml">RSS</a>
+      <a href="/llms.txt">llms.txt</a>
+    </nav>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--rule);
+    margin-top: 4rem;
+    padding: 2rem 1.5rem;
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 0.875rem;
+    color: var(--muted);
+  }
+  .footer__inner {
+    max-width: var(--max-w, 72rem);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .footer a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  .footer a:hover { color: var(--fg); }
+  .footer__links { display: flex; gap: 1.5rem; }
+</style>
