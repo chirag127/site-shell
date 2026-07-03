@@ -10,6 +10,7 @@
     "./astro": "./src/astro-integration.ts",
     "./components/*": "./src/components/*",
     "./content-schema": "./src/content-schema.ts",
+    "./bunny-fonts": "./src/bunny-fonts.ts",
     "./styles/global.css": "./src/styles/global.css",
     "./styles/typography.css": "./src/styles/typography.css"
   },
